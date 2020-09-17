@@ -1,0 +1,150 @@
+
+.encabezado {
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo img{
+    margin-left: 16px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+//////////////// MENU HAMBURGERSA /////////////////
+
+#checkbox {
+    display: none;
+}
+
+.menu span{
+    display: block;
+    width: 18px;
+    height: 2px;
+    background: black;
+    margin-bottom: 3px;
+    position: relative;
+    z-index: 1;
+    margin-right: 19px;
+    transition: transform 0.5s ease;
+}
+
+.nav {
+    margin-top: 16px;
+}
+
+.nav ul {
+    width: 100%;
+    /* position: relative */
+    position: absolute;
+    right: 0px;
+    overflow: hidden;
+    list-style: none;
+    background: #0000EC;
+    transition: height .5s ease;
+    height: 0px;
+    padding-left: 0;
+    margin-top: 26px;
+
+
+}
+
+.nav ul li {
+    position: relative;
+}
+
+.nav ul li a{
+    position: relative;
+    text-decoration: none;
+    padding: 16px 5%;
+    line-height: 28px;
+    display: block;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: rem(16px);
+    color: #FFFFFF;
+    letter-spacing: 0;
+    font-weight: 1;
+}
+
+@media screen and (min-width:769px){
+
+    .menu span{
+            display: none;
+    }
+
+    .encabezado {
+        width: 1440px;
+        margin: 0 auto;
+        height: 80px;
+        opacity: 100%;
+        display: flex;
+        justify-content: space-between;
+
+    }
+    .nav {
+        margin: 0px;
+    }
+    .logo img{
+        margin-left: 100px;
+        margin-top: 22px;
+        margin-bottom: 22px;
+        width: 36px;
+        height: 36px;
+    }
+    
+    header .nav ul {
+        position: relative;
+        list-style: none;
+        height: 60px;
+        background: #FFFFFF;
+        margin-top: 26px;
+        margin-bottom: 26px;
+        margin-right: 100px;
+
+    }
+    
+    .nav ul li {
+        display: inline-block;
+        margin-left: 48px;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 1rem;
+        letter-spacing: 0;
+        line-height: 28px;
+        padding: 0px;
+        width: 87px;
+        height: 28px;
+    }
+    .nav ul li a{
+        text-decoration-line: none;
+        color: #060A24;
+        padding: 0px 0%;
+
+    }
+    .nav ul li a:hover {
+        color: #00f3bb;
+        text-decoration: line-through;
+    }
+    .nav ul li a:active {
+        color: rgba(6,10,36,0.56);
+        text-decoration: line-through;
+    }
+
+
+}
+
+input[type="checkbox"]:checked ~ ul {
+    height: 240px;
+}
+
+input[type="checkbox"]:checked ~ label span {
+    opacity: 1;
+    transform: rotate(45deg) translate(-5px,-4px);
+}
+
+input[type="checkbox"]:checked ~ label span:nth-last-child(3) {
+    opacity: 0;
+    transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+input[type="checkbox"]:checked ~ label span:nth-last-child(2) {
+    transform: rotate(-45deg) translate(1px, -2px);
+}
